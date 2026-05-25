@@ -1,0 +1,185 @@
+%-------------------------
+% Resume in Latex
+% Author : Jack Xiuqi Zhang
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Jack Xiuqi Zhang} \\ \vspace{1pt}
+    \small +44 7572766665 $|$ \href{mailto:jack.zxq05@gmail.com}{\underline{jack.zxq05@gmail.com}} $|$
+    \href{https://www.linkedin.com/in/xiuqi-zhang/}{\underline{linkedin.com/in/xiuqi-zhang/}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Imperial College London}{London, UK}
+{MEng Computing, 3rd Year}{2023 -- 2027}
+\resumeItemListStart
+\resumeItem{Achieved High First Class in both first and second year.}
+\resumeItem{First-year modules: Object Oriented Programming, C Programming, Databases, Calculus, Linear Algebra.}
+\resumeItem{Second-year modules: Software Development, OS, Compilers, Networks, Algorithms, Probability and Statistics.}
+\resumeItemListEnd
+\resumeSubheading
+{Alice Smith School}{Kuala Lumpur, Malaysia}
+{A Levels \& IGCSEs} {2019 -- 2023}
+\resumeItemListStart
+\resumeItem{ A Levels: Mathematics (A*), Further Mathematics (A*), Physics (A*), Computer Science (A)}
+\resumeItem{ IGCSEs: A* + 999998887}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Goodnotes}{Jun. 2025 -- Sep. 2025}
+{Machine Learning and Software Engineer Intern}{London, UK}
+\resumeItemListStart
+\resumeItem{Owned end-to-end AI-powered outline generation feature from PRD to production, targeting \textbf{2M+ users}.}
+\resumeItem{Self-taught \textbf{Swift/iOS development} and built production-ready frontend integrated with backend APIs.}
+\resumeItem{Implemented a new Python processing pipeline within the existing \textbf{FastAPI + AWS Bedrock} backend.}
+\resumeItem{Developed an experimental \textbf{rule-based sentiment analysis system} for quick action suggestions.}
+\resumeItem{Fixed a critical JSON bug affecting \textbf{50k+ daily users}, reducing error rates from \textbf{40\% to near-zero}.}
+\resumeItem{Enhanced CI/CD reliability by adding \textbf{pytest} retries, lowering pipeline failure rate from \textbf{30\% to $<$5\%}.}
+\resumeItem{Designed compliance-ready prompts for the China endpoint, now serving \textbf{750k weekly users}.}
+
+\resumeItemListEnd
+
+
+\resumeSubheading
+{KEATH.AI}{Jun. 2024 -- Sep. 2024}
+{Software Engineer and Prompt Engineer Intern}{Hybrid}
+\resumeItemListStart
+\resumeItem{Engineered a comparative marking system with education specialists, improving AI grading accuracy by \textbf{50\%}.}
+\resumeItem{Developed a scalable code evaluation web platform enabling automated grading for programming assignments.}
+\resumeItem{Built a RAG-based chatbot using Flask + OpenAI API, reducing staff workload by automating Q\&A.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{\textbf{WACC Compiler} $|$ \emph{Scala, Intel x86}}{Jan. 2025 -- Apr. 2025}
+\resumeItemListStart
+\resumeItem{Led 4-person team to develop a \textbf{full-featured compiler} for WACC language with external \textbf{C FFI} integration.}
+\resumeItem{Built multi-stage pipeline: lexical analysis, syntax parsing, semantic checking, and Intel x86 code generation.}
+\resumeItem{Engineered 100+ test suite covering valid programs and error cases for correctness and robustness.}
+\resumeItem{Integrated GitLab CI pipelines for automated testing and static analysis, enforcing code quality standards.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{Pintos Operating System} $|$ \emph{C}}{Sep. 2024 -- Dec. 2024}
+\resumeItemListStart
+\resumeItem{Directed team of 4 in implementing key OS components: \textbf{threading, system calls, and virtual memory}.}
+\resumeItem{Designed and implemented a \textbf{priority donation algorithm} to prevent priority inversion in the kernel.}
+\resumeItem{Developed secure system call handlers for process management with strict kernel/user isolation.}
+\resumeItem{Implemented synchronization primitives for process execution and thread coordination.}
+\resumeItem{Architected virtual memory management features: frame allocation and eviction (clock algorithm), lazy loading, page sharing, and memory mapping.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{First Year C Project} $|$ \emph{C, WebSockets}}{May. 2024 -- Jun. 2024}
+\resumeItemListStart
+\resumeItem{Designed and implemented an emulator and assembler for the Armv8 AArch64 instruction set.}
+\resumeItem{Built a WebSocket-based chess server and client with secure handshake protocols and real-time gameplay.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+          \textbf{Programming Languages}{: Python, C, Java, Scala, Swift, TypeScript, Kotlin, SQL, Haskell} \\
+          \textbf{Frameworks \& Libraries}{: FastAPI, PyTorch, TensorFlow, React, SwiftUI/UIKit, NumPy, Pandas, OpenCV} \\
+          \textbf{Developer Tools}{: Git, Linux/Bash, Docker, AWS (Cloud Services), Xcode, GDB} \\
+          \textbf{Human Languages}{: English (native), Mandarin (native)}
+          }}
+\end{itemize}
+
+\end{document}
