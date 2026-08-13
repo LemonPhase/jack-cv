@@ -1,12 +1,21 @@
 # Placement Worklog — 2026 (Parts 1–3)
 
-> Dictated by Jack, 2026-08-09. Resume point: end of MIS load-test write+read benchmarking.
+> Dictated by Jack across sessions **2026-08-06 → 2026-08-13** (CV update project).
 > Target format: **CV experience bullet points** (LemonPhase/jack-cv update; confirmed by Jack).
+> Target roles (2026-08-06): **AI Engineer / SWE (potentially forward-deployed engineer)** at tech, quant, and finance firms.
 
 ## Placement basics
 - 6-month industrial placement, **part of MEng degree**, full-time
 - **30 Mar 2026 → 18 Sep 2026** (ongoing as of Aug 2026)
 - Employer: **"US-based hedge fund"** for now — update name after placement ends (Sep 2026)
+- Firm descriptor (2026-08-06): **"largest of its kind"** but **not tech/quant-famous** — fine to stay generic on the CV
+
+## CV context & target roles (2026-08-06)
+- Target roles: **AI Engineer / SWE / forward-deployed engineer** at tech, quant, and finance firms
+- Firm framing: repo is **public** → employer stays **"US-based hedge fund"** until placement ends (Sep 2026); then add the name
+- CV update areas: (1) **Year 3 at Imperial**, (2) **hedge fund role** — completely missing from the current CV
+- Current CV: **one-page ATS-parsable LaTeX resume** (Jake's Resume style, `\pdfgentounicode=1`); adding HF + Year 3 overflows → **decision pending: 1 vs 2 pages**
+- CV currently has **no GitHub/repo links** — a gap for SWE roles; decision pending (see OSS note below)
 
 ## System overview — news ingestion
 - Ingest news articles from various sources → store → normalise → optional **LLM screening** (labelling + summaries) → frontend for traders/researchers
@@ -89,9 +98,18 @@
 ---
 
 ## Infrastructure ownership & environment (answered 2026-08-12)
-- **K8s cluster**: managed by **devops** (not Jack) — but Jack did hands-on ops work: wrote/used **Helm charts**, viewed pod status via **Headlamp** (K8s UI) + **kubectl**, used **Datadog** for metrics and logs to debug issues
+- **K8s cluster**: managed by **devops** (not Jack) — but Jack did hands-on ops work: wrote/used **Helm charts**, viewed pod status via **Headlamp** (K8s UI) + **kubectl**, used **Datadog** (metrics/logs) to debug issues. (Monitoring tools from the original 2026-08-06 brain dump also included **Splunk** — detail not confirmed; Datadog is the confirmed one)
 - **RDS (Postgres)**: managed by **database admin team** — not Jack's infra
 - **CV takeaway**: infrastructure itself is shared/team-managed; Jack's ownership is at the **application layer** (services, agent, MCP, evals) + hands-on debugging on the cluster. Phrase as "debugged production issues on K8s (Helm, Headlamp, kubectl, Datadog)" rather than "managed the cluster"
+
+---
+
+## Year 3 — Imperial College (dictated 2026-08-06)
+- **Year 3 completed** (2025–26) with **High First Class** (same as years 1–2)
+- **Y3 modules**: Introduction to ML, Maths for ML, **Computing Research Collective** (special research-oriented module — this is the **PROBE benchmark** project), Computer Vision, Deep Learning, Robotics, Optimisation (optimality conditions, convex methods, KKT conditions, duality)
+- **Deep Learning coursework**: trained a **diffusion model** for "hotdog" image generation; ~98% classifier confidence on generated images. Jack agrees this is **low leverage as phrased** — needs a proper metric (e.g. FID) + repo link, or should be skipped/reframed
+- **Robotics coursework**: led team to **2nd in cohort** in final coursework — object-avoiding **path planning** competition using a camera + Lego motors on a Raspberry Pi
+- Open question (2026-08-13): Jack unsure whether to include PROBE/Research Collective + robotics 2nd place on the CV. Assistant's lean: **include both**; skip/reframe the diffusion model
 
 ---
 
@@ -105,6 +123,15 @@
 
 ---
 
-*Open source / GitHub links (2026-08-13): Jack confirms GitHub link is weak — no OSS contributions, no completed OSS repos; all work has been inside organisations. Deprioritised on the CV unless decided otherwise. (Counterpoint discussed: the PROBE repo itself is a real public research artifact — a link may still carry weight for AI/ML roles even while in progress.)*
+## Draft CV bullets (composed so far — for the main.tex rewrite, pending Jack's go-ahead)
+- **Chat agent** (2026-08-12): *"pilot deployed to ~20 users on a 130k-doc corpus; described by a PM as a game changer"* — numbers + external validation as the impact anchor
+- **Auth** (2026-08-13): *"Added Entra ID bearer-token auth to a FastAPI service exposed via the cluster edge — previously callable by any machine that could reach it"* — genuine security closure framing (stronger than "added auth")
+- **Infra/ops** (2026-08-12): *"debugged production issues on Kubernetes (Helm, Headlamp, kubectl, Datadog)"* — honest, shows ops capability without claiming cluster management
+- **Evals/optimisation** (2026-08-09): context-window trim → *"−90% tokens per search query, −70% total tokens per recall query, 0% recall impact"*; recall + recency evals on LangSmith (designed + implemented by Jack)
+- **15 AI** (2026-08-13): *"Built a search engine over scraped Key Opinion Leader data (contacts queryable by product/tag) and an Astro-based content site; owned product development end-to-end through rapid prototyping as the company iterated on direction."* — include but compact: 1–2 bullets max, never lead with it
 
-*Next: no further placement chunk — evals (§5) is the current/last workstream (confirmed 2026-08-13). Outstanding CV decisions: Year 3 items (PROBE/Computing Research Collective, robotics 2nd place — Jack unsure), GitHub links (deprioritised), 1 vs 2 pages. Placement + startup material now complete — ready to draft CV experience section (awaiting Jack's go-ahead).*
+---
+
+*Open source / GitHub links (2026-08-13): Jack confirms GitHub link is weak — no OSS contributions, no completed OSS repos; all work has been inside organisations. Deprioritised on the CV unless decided otherwise. (Counterpoint discussed: the PROBE repo itself is a real public research artifact — a link may still carry weight for AI/ML roles even while in progress. Possible CV phrasing if linked: "ongoing research benchmark on repo docs structure & agent performance".)*
+
+*Next: no further placement chunk — evals (§5) is the current/last workstream (confirmed 2026-08-13). All source material now captured on this branch: placement Parts 1–5, infra ownership, Year 3, 15 AI, draft bullets. Outstanding CV decisions: Year 3 items (see Year 3 section — Jack unsure), GitHub links (deprioritised), 1 vs 2 pages. Next step: draft the actual main.tex experience section (placement lead → Goodnotes → 15 AI → KEATH.AI → Year 3 projects) on this branch and open a PR — awaiting Jack's go-ahead.*
