@@ -80,12 +80,47 @@ Already quantified (2M+ users, 50k users, 750k weekly). One possible add: an AI-
 - **Every bullet = ownership + number + outcome.** Tier-3 quotes: "owning a problem over executing a ticket" (Pinecone), "from idea to production" (Anthropic), "slope over intercept" (Ramp)
 - **Written communication is the most-quoted soft skill** — the CV itself is the proof; keep it ATS-crisp (already is)
 - Lead the hedge fund entry with the agent, not the platform work — it is the differentiator
-- Keep 1 page unless the two-page decision is made deliberately
+- Keep 1 page — **decided with evidence, see §13**
 
 ### 12. Interview prep note (not CV content, but implied by the data)
 - **AI/SWE interviews:** DSA + system design are tested even when JDs omit them (assumed). Practise both.
 - **Quant dev interviews:** C++ is tested hands-on ("we will test" — Wintermute). Don't apply for C++-required quant-dev roles until you have real C++ evidence.
 - **Go** is the #1 backend language in big-tech JDs (63%) — worth learning for the SWE path.
+
+---
+
+## 13. PAGE COUNT — DECIDED: 1 page (research-backed)
+
+### Do the JDs specify a format?
+**No.** A full-text scan of all 76 collected JDs found **zero** mentions of resume length/format. No firm (Google, Microsoft, Meta, Jane Street, D.E. Shaw, Jump, OpenAI, Anthropic, or any other) states a page preference in its job postings or application instructions. So the JDs give no direct answer — the evidence comes from external, authoritative sources (researched 2026-08-13).
+
+### What the research says
+| Source | Verdict | Quote |
+|---|---|---|
+| MIT CAPD (US new-grad norm) | **1 page** | "Stick to one page, unless you have extensive experience or an advanced degree" |
+| Imperial College Careers (UK) | 1–2 pages | "A good CV will… fill one or two whole pages" (UK convention) |
+| Quant guides (Quantt, Calibr, YoungAndCalculated) | **1 page** | "Anything longer than one page signals that you can't prioritise information — which is a relevant skill for the job itself" |
+| Wall Street Oasis (finance consensus) | **1 page** | "Your resume will probably get thrown in the trash if over 1 page" |
+| AI labs (Anthropic, OpenAI) | No rule; density wins | "If you've done interesting independent research… put that at the top" (Anthropic); 2 pages tolerated only with a real publications list |
+| ATS (Greenhouse-era guidance) | Count irrelevant, layout matters | ATS parses simple full-width text best; no evidence of page-count filtering |
+
+### The decision
+**1 page — master resume.** Rationale:
+1. **Quant is effectively a one-page industry** (every quant-specific source says so; screeners spend seconds). If Jack targets quant at all, 1 page is mandatory.
+2. **US new-grad convention is 1 page** (MIT); target firms are US-style even when UK-based.
+3. **AI labs tolerate 2 pages only with publications** — Jack has none yet (PROBE is in progress, not published). A 2-page new-grad CV reads as failure to prioritise.
+4. **ATS doesn't care about count** — it cares about layout; Jake's Resume template is already ATS-clean.
+5. The UK's "1–2 pages" convention is the only permissive signal, and it loses to the US market being targeted.
+
+### The one workable 2-page exception
+If Jack later accumulates **≥2 genuine peer-reviewed publications** (or PROBE ships a published paper), a 2-page variant becomes acceptable **for AI-lab applications only** — with the core CV still fitting one page and a publications addendum on page 2 (Quantt guide sanctions this). Quant applications stay 1-page forever at this career stage.
+
+### What 1 page forces (cut list for the rewrite)
+- Experience gets 4 entries: **Hedge fund (4 bullets)** → **Goodnotes (3–4 best bullets, keep the numbers)** → **15 AI (1–2 lines)** → **KEATH.AI (2 lines)**
+- Projects: WACC + Pintos trimmed to 2–3 bullets each; **drop or one-line the Armv8/chess project** (lowest leverage)
+- Education: add the Year 3 line; keep A-Levels/IGCSE compact
+- Skills: one dense line per category; drop Haskell/Kotlin if space is tight (not in JD demand)
+- No padding, no sub-10pt fonts, no sub-0.5" margins
 
 ---
 
