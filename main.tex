@@ -114,8 +114,8 @@
 {Software Engineer (Industrial Placement)}{Mar. 2026 -- Present}
 \resumeItemListStart
 \resumeItem{Built a production LLM chat agent over a \textbf{130k-document news corpus} (langchain deepagents, Manticore search, OpenUI) --- prototyped in 3 days, now a \textbf{~20-user pilot}; a PM called it a \textbf{``game changer''}.}
-\resumeItem{Designed and implemented the \textbf{evaluation harness} (LangSmith; recall and recency evals from real user feedback); trimmed search-result metadata, cutting \textbf{tokens per search by 90\% and total tokens per query by 70\% with 0\% recall impact}.}
-\resumeItem{Deployed an \textbf{MCP server} (index / search / get\_document) so users can connect their own Claude/GPT; debugged production issues on \textbf{Kubernetes} (Helm, kubectl, Datadog) and fixed an agent-stopping bug by gating deepagents auto-compaction output.}
+\resumeItem{Designed and built the \textbf{evaluation harness} (LangSmith; recall/recency evals from feedback); trimmed search-result metadata, cutting \textbf{tokens per search by 90\% and tokens per query by 70\% with 0\% recall impact}.}
+\resumeItem{Deployed an \textbf{MCP server} (index/search/get\_document) so users can connect their Claude/GPT; debugged \textbf{Kubernetes} production issues (Helm, kubectl, Datadog) and fixed an agent-stopping bug by gating deepagents auto-compaction output.}
 \resumeItem{Benchmarked a FastAPI + Postgres service (Locust): fixed connection-pool, worker, and row-lock bottlenecks --- \textbf{~1000 RPS write at p95 577ms}; deployed indexes improving REST reads by \textbf{129.9\%} and GraphQL by \textbf{33.6\%}.}
 \resumeItem{Added \textbf{Microsoft Entra ID bearer-token auth} to a service exposed via the cluster edge --- previously callable by any machine that could reach it (closed a cluster-wide exposure).}
 \resumeItemListEnd
@@ -152,15 +152,9 @@
 \resumeSubHeadingListStart
 
 \resumeProjectHeading
-{\textbf{PROBE --- Research Benchmark} $|$ \emph{Python, coding agents} $|$ \href{https://github.com/LemonPhase/PROBE}{\underline{github.com/LemonPhase/PROBE}}}{2026 -- Present}
-\resumeItemListStart
-\resumeItem{Open-source research benchmark on how repository documentation structure affects coding-agent performance; SWE-bench-derived bugfix instances with runtime validation.}
-\resumeItemListEnd
-
-\resumeProjectHeading
 {\textbf{WACC Compiler} $|$ \emph{Scala, Intel x86}}{Jan. 2025 -- Apr. 2025}
 \resumeItemListStart
-\resumeItem{Led 4-person team to develop a \textbf{full-featured compiler} (lexing, parsing, semantic checks, Intel x86 code generation) with external \textbf{C FFI} integration.}
+\resumeItem{Led 4-person team to develop a \textbf{full-featured compiler} (lexing, parsing, semantic checks, x86 codegen) with \textbf{C FFI}.}
 \resumeItem{Built a \textbf{100+ test suite} and GitLab CI for automated testing and static analysis.}
 \resumeItemListEnd
 
