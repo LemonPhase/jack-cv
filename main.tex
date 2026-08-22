@@ -2,9 +2,9 @@
 % Resume in Latex
 % Author : Jack Xiuqi Zhang
 % License : MIT
-%------------------------
+%-------------------------
 
-\documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper,10pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -17,7 +17,7 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-\input{glyphtounicode}
+\ifdefined\pdfglyphtounicode\input{glyphtounicode}\fi
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -44,7 +44,7 @@
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 % Ensure ATS parsable
-\pdfgentounicode=1
+\ifdefined\pdfgentounicode\pdfgentounicode=1\fi
 
 %-------------------------
 % Custom commands
@@ -86,7 +86,8 @@
 \begin{center}
     \textbf{\Huge \scshape Jack Xiuqi Zhang} \\ \vspace{1pt}
     \small +44 7572766665 $|$ \href{mailto:jack.zxq05@gmail.com}{\underline{jack.zxq05@gmail.com}} $|$
-    \href{https://www.linkedin.com/in/xiuqi-zhang/}{\underline{linkedin.com/in/xiuqi-zhang/}}
+    \href{https://www.linkedin.com/in/xiuqi-zhang/}{\underline{linkedin.com/in/xiuqi-zhang/}} $|$
+    \href{https://github.com/LemonPhase}{\underline{github.com/LemonPhase}}
 \end{center}
 
 %-----------EDUCATION-----------
@@ -94,19 +95,14 @@
 \resumeSubHeadingListStart
 \resumeSubheading
 {Imperial College London}{London, UK}
-{MEng Computing, 3rd Year}{2023 -- 2027}
+{MEng Computing}{2023 -- 2027}
 \resumeItemListStart
-\resumeItem{Achieved High First Class in both first and second year.}
-\resumeItem{First-year modules: Object Oriented Programming, C Programming, Databases, Calculus, Linear Algebra.}
-\resumeItem{Second-year modules: Software Development, OS, Compilers, Networks, Algorithms, Probability and Statistics.}
+\resumeItem{Achieved High First Class in first, second, and third year.}
+\resumeItem{Third-year modules: Introduction to ML, Maths for ML, Deep Learning, Computer Vision, Robotics (led team to 2nd in cohort --- object-avoiding path planning), Optimisation.}
 \resumeItemListEnd
 \resumeSubheading
 {Alice Smith School}{Kuala Lumpur, Malaysia}
-{A Levels \& IGCSEs} {2019 -- 2023}
-\resumeItemListStart
-\resumeItem{ A Levels: Mathematics (A*), Further Mathematics (A*), Physics (A*), Computer Science (A)}
-\resumeItem{ IGCSEs: A* + 999998887}
-\resumeItemListEnd
+{A Levels} {2019 -- 2023}
 \resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------
@@ -114,27 +110,39 @@
 \resumeSubHeadingListStart
 
 \resumeSubheading
-{Goodnotes}{Jun. 2025 -- Sep. 2025}
-{Machine Learning and Software Engineer Intern}{London, UK}
+{US-based Hedge Fund}{}
+{Software Engineer (Industrial Placement)}{Mar. 2026 -- Present}
 \resumeItemListStart
-\resumeItem{Owned end-to-end AI-powered outline generation feature from PRD to production, targeting \textbf{2M+ users}.}
-\resumeItem{Self-taught \textbf{Swift/iOS development} and built production-ready frontend integrated with backend APIs.}
-\resumeItem{Implemented a new Python processing pipeline within the existing \textbf{FastAPI + AWS Bedrock} backend.}
-\resumeItem{Developed an experimental \textbf{rule-based sentiment analysis system} for quick action suggestions.}
-\resumeItem{Fixed a critical JSON bug affecting \textbf{50k+ daily users}, reducing error rates from \textbf{40\% to near-zero}.}
-\resumeItem{Enhanced CI/CD reliability by adding \textbf{pytest} retries, lowering pipeline failure rate from \textbf{30\% to $<$5\%}.}
-\resumeItem{Designed compliance-ready prompts for the China endpoint, now serving \textbf{750k weekly users}.}
-
+\resumeItem{Built a production LLM chat agent over a \textbf{130k-document news corpus} (langchain deepagents, Manticore search, OpenUI) --- prototyped in 3 days, now a \textbf{~20-user pilot}; a PM called it a \textbf{``game changer''}.}
+\resumeItem{Designed and built the \textbf{evaluation harness} (LangSmith; recall/recency evals from feedback); trimmed search-result metadata, cutting \textbf{tokens per search by 90\% and tokens per query by 70\% with 0\% recall impact}.}
+\resumeItem{Deployed an \textbf{MCP server} (index/search/get\_document) so users can connect their Claude/GPT; debugged \textbf{Kubernetes} production issues (Helm, kubectl, Datadog) and fixed an agent-stopping bug by gating deepagents auto-compaction output.}
+\resumeItem{Benchmarked a FastAPI + Postgres service (Locust): fixed connection-pool, worker, and row-lock bottlenecks --- \textbf{~1000 RPS write at p95 577ms}; deployed indexes improving REST reads by \textbf{129.9\%} and GraphQL by \textbf{33.6\%}.}
+\resumeItem{Added \textbf{Microsoft Entra ID bearer-token auth} to a service exposed via the cluster edge --- previously callable by any machine that could reach it (closed a cluster-wide exposure).}
 \resumeItemListEnd
 
+\resumeSubheading
+{Goodnotes}{London, UK}
+{Machine Learning and Software Engineer Intern}{Jun. 2025 -- Sep. 2025}
+\resumeItemListStart
+\resumeItem{Owned end-to-end AI-powered outline generation feature from PRD to production, targeting \textbf{2M+ users}.}
+\resumeItem{Implemented a Python processing pipeline within the existing \textbf{FastAPI + AWS Bedrock} backend; self-taught \textbf{Swift/iOS} and built the production-ready frontend.}
+\resumeItem{Fixed a critical JSON bug affecting \textbf{50k+ daily users}, reducing error rates from \textbf{40\% to near-zero}.}
+\resumeItem{Enhanced CI/CD reliability by adding \textbf{pytest} retries, lowering pipeline failure rate from \textbf{30\% to $<$5\%}.}
+\resumeItemListEnd
 
 \resumeSubheading
-{KEATH.AI}{Jun. 2024 -- Sep. 2024}
-{Software Engineer and Prompt Engineer Intern}{Hybrid}
+{15 AI}{}
+{Founding Engineer}{Mar. 2025 -- Apr. 2026}
+\resumeItemListStart
+\resumeItem{Built a search engine over scraped Key Opinion Leader data (contacts queryable by product/tag) and an Astro-based content site; owned product development end-to-end through rapid prototyping as the company iterated on direction.}
+\resumeItemListEnd
+
+\resumeSubheading
+{KEATH.AI}{}
+{Software Engineer and Prompt Engineer Intern}{Jun. 2024 -- Sep. 2024}
 \resumeItemListStart
 \resumeItem{Engineered a comparative marking system with education specialists, improving AI grading accuracy by \textbf{50\%}.}
-\resumeItem{Developed a scalable code evaluation web platform enabling automated grading for programming assignments.}
-\resumeItem{Built a RAG-based chatbot using Flask + OpenAI API, reducing staff workload by automating Q\&A.}
+\resumeItem{Built a \textbf{RAG-based chatbot} (Flask + OpenAI API), reducing staff workload by automating Q\&A.}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -146,27 +154,14 @@
 \resumeProjectHeading
 {\textbf{WACC Compiler} $|$ \emph{Scala, Intel x86}}{Jan. 2025 -- Apr. 2025}
 \resumeItemListStart
-\resumeItem{Led 4-person team to develop a \textbf{full-featured compiler} for WACC language with external \textbf{C FFI} integration.}
-\resumeItem{Built multi-stage pipeline: lexical analysis, syntax parsing, semantic checking, and Intel x86 code generation.}
-\resumeItem{Engineered 100+ test suite covering valid programs and error cases for correctness and robustness.}
-\resumeItem{Integrated GitLab CI pipelines for automated testing and static analysis, enforcing code quality standards.}
+\resumeItem{Led 4-person team to develop a \textbf{full-featured compiler} (lexing, parsing, semantic checks, x86 codegen) with \textbf{C FFI}.}
+\resumeItem{Built a \textbf{100+ test suite} and GitLab CI for automated testing and static analysis.}
 \resumeItemListEnd
 
 \resumeProjectHeading
 {\textbf{Pintos Operating System} $|$ \emph{C}}{Sep. 2024 -- Dec. 2024}
 \resumeItemListStart
-\resumeItem{Directed team of 4 in implementing key OS components: \textbf{threading, system calls, and virtual memory}.}
-\resumeItem{Designed and implemented a \textbf{priority donation algorithm} to prevent priority inversion in the kernel.}
-\resumeItem{Developed secure system call handlers for process management with strict kernel/user isolation.}
-\resumeItem{Implemented synchronization primitives for process execution and thread coordination.}
-\resumeItem{Architected virtual memory management features: frame allocation and eviction (clock algorithm), lazy loading, page sharing, and memory mapping.}
-\resumeItemListEnd
-
-\resumeProjectHeading
-{\textbf{First Year C Project} $|$ \emph{C, WebSockets}}{May. 2024 -- Jun. 2024}
-\resumeItemListStart
-\resumeItem{Designed and implemented an emulator and assembler for the Armv8 AArch64 instruction set.}
-\resumeItem{Built a WebSocket-based chess server and client with secure handshake protocols and real-time gameplay.}
+\resumeItem{Directed team of 4 implementing \textbf{threading, system calls, and virtual memory} (clock eviction, lazy loading, page sharing); designed a \textbf{priority donation algorithm} preventing priority inversion in the kernel.}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -175,10 +170,10 @@
 \section{Technical Skills}
 \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-          \textbf{Programming Languages}{: Python, C, Java, Scala, Swift, TypeScript, Kotlin, SQL, Haskell} \\
-          \textbf{Frameworks \& Libraries}{: FastAPI, PyTorch, TensorFlow, React, SwiftUI/UIKit, NumPy, Pandas, OpenCV} \\
-          \textbf{Developer Tools}{: Git, Linux/Bash, Docker, AWS (Cloud Services), Xcode, GDB} \\
-          \textbf{Human Languages}{: English (native), Mandarin (native)}
+          \textbf{Programming Languages}{: Python, C, Java, Scala, Swift, TypeScript, SQL} \\
+          \textbf{AI/LLM Engineering}{: LangChain (deepagents), LangSmith evals, MCP, RAG/vector search (Manticore), prompt engineering} \\
+          \textbf{Frameworks \& Libraries}{: FastAPI, PyTorch, TensorFlow, React, SwiftUI/UIKit, NumPy, Pandas} \\
+          \textbf{Developer Tools}{: Git, Linux/Bash, Docker, AWS, Kubernetes (Helm, kubectl), Locust, GDB}
           }}
 \end{itemize}
 
