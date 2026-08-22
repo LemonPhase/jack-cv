@@ -135,3 +135,59 @@
 *Open source / GitHub links (2026-08-13): Jack confirms GitHub link is weak — no OSS contributions, no completed OSS repos; all work has been inside organisations. Deprioritised on the CV unless decided otherwise. (Counterpoint discussed: the PROBE repo itself is a real public research artifact — a link may still carry weight for AI/ML roles even while in progress. Possible CV phrasing if linked: "ongoing research benchmark on repo docs structure & agent performance".)*
 
 *Next: no further placement chunk — evals (§5) is the current/last workstream (confirmed 2026-08-13). All source material now captured on this branch: placement Parts 1–5, infra ownership, Year 3, 15 AI, draft bullets. Outstanding CV decisions: Year 3 items (see Year 3 section — Jack unsure), GitHub links (deprioritised), 1 vs 2 pages. Next step: draft the actual main.tex experience section (placement lead → Goodnotes → 15 AI → KEATH.AI → Year 3 projects) on this branch and open a PR — awaiting Jack's go-ahead.*
+
+---
+
+## Appendix A — Baseline CV content (original main.tex, "Initial Version - From Sept 2025", commit 6113c8e)
+
+> Full reference copy of the pre-2026 CV. This is what the 2026 rewrite (commit 92f1d33) started from and condensed. Kept here so **nothing from the original CV is lost** even though the one-pager dropped some bullets. The 2026 rewrite condensed 7 Goodnotes bullets → 4, 3 KEATH.AI → 2, 4 WACC → 2, 5 Pintos → 1, and dropped the First Year C Project, IGCSE grades, and Human Languages.
+
+### Education (original)
+- Imperial College London — MEng Computing, 3rd Year, 2023–2027. "Achieved High First Class in both first and second year." (2026 rewrite adds third year.)
+- First-year modules: Object Oriented Programming, C Programming, Databases, Calculus, Linear Algebra.
+- Second-year modules: Software Development, OS, Compilers, Networks, Algorithms, Probability and Statistics.
+- Alice Smith School, Kuala Lumpur — A Levels & IGCSEs, 2019–2023: A Levels Mathematics (A\*), Further Mathematics (A\*), Physics (A\*), Computer Science (A); IGCSEs A\* + 999998887.
+- Human Languages (original skills section): English (native), Mandarin (native).
+
+### Experience — Goodnotes (original 7 bullets; London, UK; ML & SWE Intern, Jun–Sep 2025)
+1. Owned end-to-end AI-powered outline generation feature from PRD to production, targeting **2M+ users**.
+2. Self-taught **Swift/iOS development** and built production-ready frontend integrated with backend APIs.
+3. Implemented a new Python processing pipeline within the existing **FastAPI + AWS Bedrock** backend.
+4. Developed an experimental **rule-based sentiment analysis system** for quick action suggestions. *(dropped in 2026 rewrite)*
+5. Fixed a critical JSON bug affecting **50k+ daily users**, reducing error rates from **40% to near-zero**.
+6. Enhanced CI/CD reliability by adding **pytest** retries, lowering pipeline failure rate from **30% to <5%**.
+7. Designed compliance-ready prompts for the **China endpoint**, now serving **750k weekly users**. *(dropped in 2026 rewrite)*
+
+### Experience — KEATH.AI (original 3 bullets; Hybrid; SWE & Prompt Engineer Intern, Jun–Sep 2024)
+1. Engineered a comparative marking system with education specialists, improving AI grading accuracy by **50%**.
+2. Developed a scalable **code evaluation web platform** enabling automated grading for programming assignments. *(dropped in 2026 rewrite)*
+3. Built a RAG-based chatbot using **Flask + OpenAI API**, reducing staff workload by automating Q&A.
+
+### Projects — WACC Compiler (original 4 bullets; Scala, Intel x86; Jan–Apr 2025)
+1. Led 4-person team to develop a **full-featured compiler** for WACC language with external **C FFI** integration.
+2. Built multi-stage pipeline: lexical analysis, syntax parsing, semantic checking, and Intel x86 code generation.
+3. Engineered 100+ test suite covering valid programs and error cases for correctness and robustness.
+4. Integrated GitLab CI pipelines for automated testing and static analysis, enforcing code quality standards.
+
+### Projects — Pintos Operating System (original 5 bullets; C; Sep–Dec 2024)
+1. Directed team of 4 in implementing key OS components: **threading, system calls, and virtual memory**.
+2. Designed and implemented a **priority donation algorithm** to prevent priority inversion in the kernel.
+3. Developed secure system call handlers for process management with strict kernel/user isolation. *(dropped in 2026 rewrite)*
+4. Implemented synchronization primitives for process execution and thread coordination. *(dropped in 2026 rewrite)*
+5. Architected virtual memory management features: frame allocation and eviction (clock algorithm), lazy loading, page sharing, and memory mapping. *(condensed in 2026 rewrite)*
+
+### Projects — First Year C Project (original 2 bullets; C, WebSockets; May–Jun 2024) *(whole project dropped in 2026 rewrite — lowest leverage, see cv-update-plan §13 cut list)*
+1. Designed and implemented an **emulator and assembler for the Armv8 AArch64 instruction set**.
+2. Built a **WebSocket-based chess server and client** with secure handshake protocols and real-time gameplay.
+
+### Technical Skills (original)
+- Programming Languages: Python, C, Java, Scala, Swift, TypeScript, **Kotlin**, SQL, **Haskell** *(Kotlin/Haskell dropped in rewrite — not in JD demand)*
+- Frameworks & Libraries: FastAPI, PyTorch, TensorFlow, React, SwiftUI/UIKit, NumPy, Pandas, **OpenCV** *(OpenCV dropped in rewrite)*
+- Developer Tools: Git, Linux/Bash, Docker, AWS (Cloud Services), **Xcode**, GDB *(Xcode dropped in rewrite)*
+- Human Languages: English (native), Mandarin (native) *(dropped in rewrite — space)*
+
+### 2026 rewrite — what changed vs baseline (for the record)
+- Added: hedge fund role (5 bullets), 15 AI (1 bullet), Year 3 education line (High First third year + Y3 modules incl. robotics 2nd-in-cohort), GitHub link in heading, AI/LLM skills line (LangChain deepagents, LangSmith evals, MCP, Manticore, prompt engineering), Locust + Kubernetes in developer tools.
+- Condensed: Goodnotes 7→4, KEATH.AI 3→2, WACC 4→2, Pintos 5→1.
+- Dropped: rule-based sentiment analysis, China endpoint (750k weekly), KEATH.AI code evaluation platform, Pintos syscall handlers + sync primitives, First Year C Project (Armv8 + chess), IGCSE grades, Kotlin/Haskell/OpenCV/Xcode skills, Human Languages.
+- PROBE project section was added in the rewrite then **removed on 2026-08-15** at Jack's request (commit 93894f2).
