@@ -123,6 +123,20 @@
 
 ---
 
+### 7. AI PDF processor — semaphore fix (dictated 2026-08-22) — NEW CV material (interview story > CV bullet)
+- **System**: an "AI PDF processor" at the hedge fund — service handling PDFs (details of the AI component — LLM calls vs OCR vs just the name — **unconfirmed, open question**)
+- **Problem**: **spiky load** on the service → pod kept crashing → **CrashLoopBackOff** (K8s)
+- **Fix**: added a **semaphore** to cap concurrent in-flight work → pod stays healthy, no more crashloop backoff
+- **Verdict (2026-08-22)**: strong **interview story** (spiky load → unbounded concurrency → crash → bounded concurrency → stable; symptom → root cause → fix → verify); **weak as standalone CV bullet** on the 1-pager (small fix, no numbers, lower leverage than chat agent / load-testing / auth / evals). Best CV use: **evidence for the existing K8s bullet** ("debugged Kubernetes production issues") rather than a new bullet
+- **Open questions before it can be a CV bullet**:
+  1. Ownership — Jack's service? his fix alone, or shared?
+  2. Root cause detail — OOM-kill? thread/connection exhaustion? what resource was the semaphore capping (memory / LLM calls / file handles)?
+  3. Before/after numbers — crashloops per day before vs after, load spike size (peak RPS), uptime/error-rate change ("crashing several times/day → zero in X weeks" is enough)
+  4. What the "AI" in the name actually does — if it gates LLM concurrency it ties into the AI narrative
+- Potential phrasing once numbers exist: *"Fixed a crash-looping PDF processing service under spiky load by adding a semaphore to bound concurrency → zero crashes (was N/day)"* — or merged into the K8s ops bullet
+
+---
+
 ## Draft CV bullets (composed so far — for the main.tex rewrite, pending Jack's go-ahead)
 - **Chat agent** (2026-08-12): *"pilot deployed to ~20 users on a 130k-doc corpus; described by a PM as a game changer"* — numbers + external validation as the impact anchor
 - **Auth** (2026-08-13): *"Added Entra ID bearer-token auth to a FastAPI service exposed via the cluster edge — previously callable by any machine that could reach it"* — genuine security closure framing (stronger than "added auth")
